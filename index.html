@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ครูออม · ผจญภัยข้อสอบ ม.1 – โรงเรียนปิยมิตรวิทยา</title>
+<meta name="description" content="เกมฝึกทำข้อสอบ ม.1 บนมือถือ 5 วิชา 20 ด่าน 100 ข้อ พร้อมบอสครูออม เฉลยและคำอธิบายทุกข้อ · โรงเรียนปิยมิตรวิทยา อ.เชียงคำ จ.พะเยา">
+<meta name="theme-color" content="#0b1020">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ครูออม · โรงเรียนปิยมิตรวิทยา">
+<meta property="og:title" content="ครูออม · ผจญภัยข้อสอบ ม.1 — เรียน ม.1 อย่างมั่นใจ บายครูออม">
+<meta property="og:description" content="วิทย์ คณิต อังกฤษ ไทย สังคม วิชาละ 4 ด่าน ด่านสุดท้ายสู้บอสครูออม! เล่นฟรีบนมือถือ รู้คะแนนทันทีพร้อมเฉลย · โรงเรียนปิยมิตรวิทยา">
+<meta property="og:url" content="https://kruom9.github.io/kruom-m1/">
+<meta property="og:image" content="https://kruom9.github.io/kruom-m1/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;800&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1020;--bg2:#121a33;--panel:#161e38;--panel2:#1c2648;
+  --line:rgba(212,175,55,.28);--gold:#d4af37;--gold2:#f0d78c;--gold3:#a67c00;
+  --cream:#f7f1e3;--muted:#a8b0c8;--ok:#3dd68c;--bad:#ff6b7a;--accent:#7c5cff;
+  --shadow:0 12px 40px rgba(0,0,0,.45);--radius:20px;
+  --font:Kanit,Sarabun,Tahoma,sans-serif;--font-body:Sarabun,Kanit,Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);background:radial-gradient(1200px 600px at 10% -10%,#2a1f6e55,transparent),radial-gradient(900px 500px at 100% 0%,#7a4b1055,transparent),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--cream);min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:10px 10px 40px}
+.hero{display:flex;gap:12px;align-items:center;background:linear-gradient(120deg,#1a1440ee,#2a1a55ee 40%,#4a2c0aee);border:1px solid var(--line);border-radius:22px;padding:12px 14px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,#d4af3722 50%,transparent 60%);pointer-events:none;animation:shimmer 6s infinite}
+@keyframes shimmer{0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
+.logo{width:54px;height:54px;flex-shrink:0;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff8e7,#f0d78c 40%,#a67c00);color:#2a1a00;font-weight:800;display:grid;place-items:center;font-size:12px;border:3px solid var(--gold2);box-shadow:0 0 0 4px #d4af3733,0 8px 20px #0006;text-align:center;line-height:1.05;z-index:1}
+.ttl{flex:1;min-width:0;z-index:1}.ttl h1{margin:0;font-size:19px;background:linear-gradient(90deg,#fff,#f0d78c);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.ttl .sub{font-size:12px;color:var(--muted);font-family:var(--font-body)}
+.slogan{margin:3px 0 0;font-size:12px;font-weight:600;background:linear-gradient(90deg,var(--gold2),#fff8e7,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.slogan::before{content:"✦ ";-webkit-text-fill-color:var(--gold)}.slogan::after{content:" ✦";-webkit-text-fill-color:var(--gold)}
+.btn{border:0;border-radius:12px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer}
+.reset{background:#ffffff14;color:var(--cream);border:1px solid var(--line)}
+.go{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;font-size:16px;padding:12px 18px;box-shadow:0 4px 0 var(--gold3),0 8px 20px #d4af3744}
+.go:disabled{filter:grayscale(1);opacity:.6}
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-top:12px;box-shadow:var(--shadow)}
+.panel h2{margin:0 0 8px;font-size:18px;color:var(--gold2)}
+label{display:block;font-size:14px;margin-top:8px;font-family:var(--font-body)}
+input[type=text],input[type=tel],input:not([type]),select{width:100%;padding:11px;font:inherit;font-size:16px;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:#0b1020;color:var(--cream)}
+.pdpa{background:#3a2a1066;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;font-family:var(--font-body);color:var(--muted);margin:12px 0;line-height:1.55}.pdpa b{color:var(--gold2)}
+.steps{display:flex;gap:6px;margin:8px 0 2px;font-size:12px;font-family:var(--font-body)}.steps span{flex:1;text-align:center;padding:5px;border-radius:999px;background:#ffffff10;color:var(--muted);border:1px solid #ffffff18}.steps span.on{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;font-weight:600}
+.pdpa ul{margin:6px 0;padding-left:18px}.pdpa li{margin:3px 0}
+.err{color:var(--bad);font-family:var(--font-body);font-size:14px}
+.stat{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:14px;padding:7px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px}
+.pbar{flex:1;height:10px;background:#ffffff18;border-radius:8px;overflow:hidden}.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2));transition:width .5s}
+.zone{margin-top:14px;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;background:radial-gradient(ellipse at 20% 30%,#2a1f6e66,transparent 50%),radial-gradient(ellipse at 80% 60%,#5a3a1066,transparent 45%),linear-gradient(#0e1630,#152045 55%,#0f2418)}
+.zone .zt{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;color:#1a1200;font-weight:800;font-size:14px;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
+.zone .zt small{font-weight:600}
+.path{position:relative;height:340px}
+svg.road{position:absolute;inset:0;width:100%;height:100%}
+.node{position:absolute;transform:translate(-50%,-50%);text-align:center;cursor:pointer;width:118px;background:none;border:0;color:inherit;font:inherit;padding:0}
+.node .c{width:52px;height:52px;margin:auto;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:800;color:#1a1200;border:3px solid var(--gold2);box-shadow:0 6px 0 #0005,0 0 16px #d4af3744;transition:transform .15s;background:linear-gradient(#f0d78c,#a67c00)}
+.node:active .c{transform:scale(1.1)}
+.node.done .c{background:linear-gradient(#3dd68c,#1b8a55);color:#fff;border-color:#9ff0c5}
+.node.open .c{background:linear-gradient(#ffd54f,#ff8f00);animation:pulse 1.5s infinite}
+.node.locked .c{background:linear-gradient(#4a5168,#2e3448);color:#99a;border-color:#6a738a}
+.node.boss-node .c{width:70px;height:70px;font-size:28px;background:linear-gradient(#6a1b9a,#d4af37);color:#fff;border-color:#f0d78c}
+.node.boss-node.locked .c{filter:grayscale(.8)}
+@keyframes pulse{50%{box-shadow:0 0 0 12px #ffb30033,0 6px 0 #0004}}
+.node .lb{background:rgba(12,16,32,.92);border:1px solid var(--line);border-radius:10px;font-size:11px;line-height:1.25;padding:4px 5px;margin-top:4px;font-weight:600}
+.stars{color:var(--gold);font-size:12px;letter-spacing:-1px}.stars .off{color:#3a4258}
+.deco{position:absolute;font-size:26px;opacity:.8;pointer-events:none}
+.hidden{display:none!important}
+.screen{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.wipe{position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(circle,#d4af37,#1a1440 70%);opacity:0;transition:opacity .25s}
+.wipe.on{opacity:1}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.hearts{font-size:20px;letter-spacing:2px}
+.qtext{font-size:18px;line-height:1.55;margin:12px 0;white-space:pre-wrap;font-family:var(--font-body);color:#fff}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;background:#ffffff0c;border:2px solid #ffffff18;color:var(--cream);font-size:16px;font-family:var(--font-body);padding:12px 14px;border-radius:14px;width:100%}
+.opt.ok{background:#1b5e3a;border-color:var(--ok)}.opt.bad{background:#5a1a22;border-color:var(--bad)}
+.feedback{font-family:var(--font-body);margin-top:10px;min-height:24px;font-weight:600}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:8px;background:#3a2a55;color:#d4bfff;margin-right:4px}
+.boss-stage{background:linear-gradient(180deg,#1a1440,#0b1020 60%,#1a1208);border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow);margin-top:12px}
+.boss-art{width:min(230px,62vw);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 12px 24px #0008);animation:floaty 3s ease-in-out infinite}
+.boss-art.small{width:min(140px,38vw)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.boss-art.hit{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.taunt{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin:10px auto;font-family:var(--font-body);font-size:15px;color:var(--gold2);text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.taunt strong{color:#fff}
+.hp-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px}
+.hpbar{height:16px;background:#ffffff15;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.hpbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#c62828,#ff8a65,#f0d78c);transition:width .45s}
+.story{font-family:var(--font-body);font-size:14px;line-height:1.65;color:var(--muted);background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:12px;margin:10px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.big{font-size:56px;text-align:center}.score{font-size:40px;font-weight:800;text-align:center;color:var(--gold2)}
+.rev{font-family:var(--font-body);font-size:14px;border-bottom:1px solid #ffffff12;padding:10px 0;line-height:1.5}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.muted{color:var(--muted);font-family:var(--font-body)}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;border-bottom:1px solid #ffffff14;text-align:left}th{color:var(--gold2)}
+.note{font-family:var(--font-body);font-size:12px;color:var(--muted);text-align:center;margin-top:16px}
+</style></head><body>
+<div class="wipe" id="wipe"></div>
+<main>
+<header class="hero"><div class="logo">ครู<br>ออม</div><div class="ttl"><h1>ครูออม · ผจญภัยข้อสอบ ม.1</h1>
+<div class="slogan">เรียน ม.1 อย่างมั่นใจ บายครูออม</div><div class="sub">โรงเรียนปิยมิตรวิทยา · 5 วิชา 20 ด่าน 100 ข้อ</div></div></header>
+
+<!-- REGISTER -->
+<section id="sReg" class="screen panel">
+<h2>ลงทะเบียนผู้เล่น</h2>
+<p class="muted" style="margin:0">5 วิชา (วิทย์ คณิต อังกฤษ ไทย สังคม) วิชาละ 4 ด่าน ด่านละ 5 ข้อ ด่านที่ 4 ของทุกวิชาคือ <b style="color:var(--gold2)">บอสครูออม</b> · วิชาละ 20 คะแนน รวม 100 คะแนน</p>
+<div class="steps"><span id="stp1" class="on">1 · ข้อมูลนักเรียน</span><span id="stp2">2 · ผู้ปกครองและความยินยอม</span></div>
+<div id="regA">
+<label>ชื่อ-นามสกุล นักเรียน *<input id="fname" autocomplete="name"></label>
+<label>ชื่อเล่น *<input id="fnick"></label>
+<label>ชั้น ม.1 / ห้อง * (เช่น 1/2)<input id="froom" inputmode="numeric"></label>
+<label>โรงเรียน *<input id="fschool" value="ปิยมิตรวิทยา"></label>
+<label>เบอร์โทรนักเรียน (ไม่บังคับ)<input id="fphone" type="tel" inputmode="tel" placeholder="มือถือ 10 หลัก"></label>
+<button class="btn go" id="nextBtn" style="width:100%;margin-top:14px">ถัดไป: ข้อมูลผู้ปกครอง ▶</button>
+</div>
+<div id="regB" class="hidden">
+<label>ชื่อ-นามสกุล ผู้ปกครอง *<input id="fpname" autocomplete="off"></label>
+<label>ความเกี่ยวข้องกับนักเรียน *<select id="fprel"><option value="">— เลือก —</option><option>บิดา</option><option>มารดา</option><option>ปู่/ย่า/ตา/ยาย</option><option>พี่/ญาติ</option><option>ผู้ปกครองตามกฎหมาย/อื่น ๆ</option></select></label>
+<label>เบอร์โทรผู้ปกครอง (ไม่บังคับ)<input id="fpphone" type="tel" inputmode="tel" placeholder="มือถือ 10 หลัก"></label>
+<label>LINE ID ผู้ปกครอง (ไม่บังคับ)<input id="fline" autocomplete="off"></label>
+<div class="pdpa"><b>ความยินยอมของผู้ปกครอง (พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562)</b>
+<ul>
+<li><b>ข้อมูลที่เก็บ:</b> ชื่อ-นามสกุล ชื่อเล่น ชั้น/ห้อง โรงเรียน เบอร์นักเรียน (ถ้ากรอก) ชื่อผู้ปกครอง ความเกี่ยวข้อง เบอร์โทรและ LINE ID ผู้ปกครอง (ถ้ากรอก) และผลการเล่นแต่ละด่าน · <b>ไม่เก็บเลขบัตรประชาชน</b></li>
+<li><b>วัตถุประสงค์:</b> แจ้งผลคะแนนและคำแนะนำการเรียนแก่ผู้ปกครอง วิเคราะห์จุดแข็งและเรื่องที่ควรทบทวน มอบรางวัล และติดต่อผู้ปกครองเรื่องการเรียนและกิจกรรมของโรงเรียนปิยมิตรวิทยาเท่านั้น ไม่ขายหรือเปิดเผยต่อบุคคลภายนอก</li>
+<li><b>ระยะเวลาเก็บ:</b> ไม่เกิน 1 ปีการศึกษา จากนั้นโรงเรียนจะลบข้อมูล</li>
+<li><b>สิทธิของผู้ปกครอง:</b> ขอดู แก้ไข ลบข้อมูล หรือถอนความยินยอมได้ทุกเมื่อ โดยติดต่อครูออม (ครูผู้ดูแลโครงการ) โรงเรียนปิยมิตรวิทยา</li>
+<li id="pdpaLocal"><b>ในเครื่องนี้:</b> ข้อมูลและคะแนนบันทึกไว้ในเบราว์เซอร์ของเครื่องนี้ ลบได้ทุกเมื่อด้วยปุ่ม "เปลี่ยนผู้เล่น"</li>
+</ul>
+<label style="display:flex;gap:8px;align-items:flex-start;color:var(--cream)"><input type="checkbox" id="fconsent" style="width:22px;height:22px;margin-top:2px;flex-shrink:0"> <span>ข้าพเจ้าเป็นผู้ปกครองของนักเรียน หรือได้รับอนุญาตจากผู้ปกครองแล้ว และยินยอมให้เก็บและใช้ข้อมูลตามที่ระบุข้างต้น *</span></label></div>
+<div class="actions" style="margin-top:4px"><button class="btn reset" id="backBtn">◀ แก้ไขข้อมูลนักเรียน</button><button class="btn go" id="startBtn" style="flex:1">🗺️ เริ่มผจญภัย</button></div>
+</div>
+<div id="regErr" class="err"></div>
+</section>
+
+<!-- MAP -->
+<section id="sMap" class="screen hidden">
+<div class="panel" style="padding:10px 12px"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+<div class="stat" style="flex:1;min-width:200px">🏅 <span id="mapWho"></span><div class="pbar"><i id="mapBar"></i></div><span id="mapProg"></span></div>
+<button class="btn reset" id="toSummary">📊 สรุปคะแนน</button></div></div>
+<div id="zones"></div>
+<p class="note">เล่นด่านต่อไปได้เมื่อผ่านด่านก่อนหน้า (ทำครบ 5 ข้อ) · เล่นซ้ำได้ ระบบเก็บคะแนนที่ดีที่สุด<br><button class="btn reset" id="logout" style="margin-top:8px;font-size:12px">เปลี่ยนผู้เล่น (ล้างข้อมูลในเครื่องนี้)</button></p>
+</section>
+
+<!-- QUIZ -->
+<section id="sQuiz" class="screen hidden"><div class="panel">
+<div class="qtop"><span id="qHead"></span><span class="hearts" id="qHearts"></span></div>
+<div class="pbar" style="margin-top:8px"><i id="qBar"></i></div>
+<div class="qtext" id="qText"></div><div class="opts" id="qOpts"></div>
+<div class="feedback" id="qFb"></div>
+<div class="actions"><button class="btn reset" id="qQuit">🗺️ ออกไปแผนที่</button><button class="btn go hidden" id="qNext">ข้อต่อไป ▶</button></div>
+</div></section>
+
+<!-- BOSS INTRO -->
+<section id="sBossIntro" class="screen hidden"><div class="boss-stage">
+<div id="biArt"></div><div class="taunt" id="biTaunt"></div>
+<h2 style="text-align:center;color:var(--gold2);margin:6px 0 0" id="biName"></h2>
+<div class="story" id="biStory"></div>
+<div class="actions"><button class="btn go" id="biFight">⚔️ เริ่มสู้บอส</button><button class="btn reset" id="biBack">🗺️ กลับแผนที่</button></div>
+</div></section>
+
+<!-- BOSS FIGHT -->
+<section id="sBoss" class="screen hidden"><div class="boss-stage">
+<div class="hp-label"><span id="bfName"></span><span id="bfHp">100%</span></div><div class="hpbar"><i id="bfBar"></i></div>
+<div class="qtop" style="margin-top:8px"><span id="bfHead"></span><span class="hearts" id="bfHearts"></span></div>
+<div id="bfArt"></div><div class="taunt" id="bfTaunt"></div>
+<div class="qtext" id="bfText"></div><div class="opts" id="bfOpts"></div><div class="feedback" id="bfFb"></div>
+<div class="actions"><button class="btn go hidden" id="bfNext">ข้อต่อไป ▶</button></div>
+</div></section>
+
+<!-- RESULT -->
+<section id="sResult" class="screen hidden"><div class="panel" id="resBox"></div></section>
+
+<!-- SUMMARY -->
+<section id="sSummary" class="screen hidden"><div class="panel" id="sumBox"></div></section>
+<p class="note">ครูออม · โรงเรียนปิยมิตรวิทยา · ข้อสอบเขียนขึ้นใหม่ตามตัวชี้วัดหลักสูตรแกนกลาง ม.1</p>
+</main>
+<script src="config.js"></script>
+<script src="questions/science.js"></script><script src="questions/math.js"></script><script src="questions/english.js"></script><script src="questions/thai.js"></script><script src="questions/social.js"></script>
+<script>
+const CFG=window.GAME_CONFIG,QB=window.QB,ORDER=["science","math","english","thai","social"],TH="กขคง",LS="kruom_m1_stages_v2";
+const $=id=>document.getElementById(id);
+const BOSS_SVG=`<svg class="boss-art" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" aria-label="ครูออมยักษ์">
+  <defs>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe0b2"/><stop offset="100%" stop-color="#ffcc80"/></linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a237e"/><stop offset="100%" stop-color="#283593"/></linearGradient>
+    <linearGradient id="goldg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a67c00"/><stop offset="50%" stop-color="#f0d78c"/><stop offset="100%" stop-color="#a67c00"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- aura -->
+  <ellipse cx="160" cy="340" rx="110" ry="18" fill="#d4af37" opacity=".25"/>
+  <circle cx="160" cy="160" r="120" fill="#d4af37" opacity=".07" filter="url(#glow)"/>
+  <!-- legs -->
+  <rect x="118" y="260" width="28" height="70" rx="10" fill="#1a237e"/>
+  <rect x="174" y="260" width="28" height="70" rx="10" fill="#1a237e"/>
+  <ellipse cx="132" cy="332" rx="22" ry="10" fill="#4e342e"/>
+  <ellipse cx="188" cy="332" rx="22" ry="10" fill="#4e342e"/>
+  <!-- body / chest out -->
+  <ellipse cx="160" cy="210" rx="70" ry="78" fill="url(#shirt)" stroke="#f0d78c" stroke-width="3"/>
+  <!-- arms akimbo / hands on hips -->
+  <path d="M95,180 Q70,210 88,255 Q100,250 110,230 Q105,200 95,180" fill="url(#skin)" stroke="#e65100" stroke-width="2"/>
+  <path d="M225,180 Q250,210 232,255 Q220,250 210,230 Q215,200 225,180" fill="url(#skin)" stroke="#e65100" stroke-width="2"/>
+  <circle cx="90" cy="258" r="12" fill="url(#skin)" stroke="#e65100" stroke-width="2"/>
+  <circle cx="230" cy="258" r="12" fill="url(#skin)" stroke="#e65100" stroke-width="2"/>
+  <!-- gold belt -->
+  <rect x="115" y="248" width="90" height="14" rx="4" fill="url(#goldg)"/>
+  <!-- head -->
+  <circle cx="160" cy="110" r="52" fill="url(#skin)" stroke="#e65100" stroke-width="2"/>
+  <!-- hair bun / teacher hair -->
+  <ellipse cx="160" cy="70" rx="48" ry="28" fill="#3e2723"/>
+  <circle cx="160" cy="48" r="18" fill="#3e2723"/>
+  <circle cx="160" cy="48" r="10" fill="#f0d78c" opacity=".85"/>
+  <!-- confident grin -->
+  <path d="M138,128 Q160,148 182,128" fill="none" stroke="#bf360c" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="160" cy="130" rx="10" ry="5" fill="#ff8a65" opacity=".7"/>
+  <!-- eyes proud squint-smile -->
+  <path d="M135,105 Q145,98 155,105" fill="none" stroke="#3e2723" stroke-width="3" stroke-linecap="round"/>
+  <path d="M165,105 Q175,98 185,105" fill="none" stroke="#3e2723" stroke-width="3" stroke-linecap="round"/>
+  <!-- blush -->
+  <circle cx="128" cy="118" r="8" fill="#ff8a80" opacity=".45"/>
+  <circle cx="192" cy="118" r="8" fill="#ff8a80" opacity=".45"/>
+  <!-- glasses gold -->
+  <circle cx="145" cy="108" r="14" fill="none" stroke="#f0d78c" stroke-width="3"/>
+  <circle cx="175" cy="108" r="14" fill="none" stroke="#f0d78c" stroke-width="3"/>
+  <line x1="159" y1="108" x2="161" y2="108" stroke="#f0d78c" stroke-width="3"/>
+  <!-- name badge -->
+  <rect x="140" y="195" width="40" height="18" rx="4" fill="#f0d78c"/>
+  <text x="160" y="208" text-anchor="middle" font-size="10" fill="#1a1200" font-family="Kanit,sans-serif" font-weight="700">ครูออม</text>
+  
+<g id="PROPID"></g></svg>
+`;
+const PROPS={
+ math:`<g transform="translate(205,110) rotate(-10)"><rect width="74" height="96" rx="8" fill="#1a237e" stroke="#f0d78c" stroke-width="3"/><rect x="8" y="8" width="58" height="22" rx="3" fill="#90caf9"/><text x="37" y="25" text-anchor="middle" font-size="14" fill="#1a1200" font-family="Kanit">x=5</text><g fill="#f0d78c" font-family="Kanit" font-size="16" text-anchor="middle"><text x="20" y="55">+</text><text x="54" y="55">−</text><text x="20" y="84">×</text><text x="54" y="84">÷</text></g></g>`,
+ science:`<g transform="translate(212,110)"><path d="M22,0 h26 v34 l24,50 q4,12 -10,12 h-54 q-14,0 -10,-12 l24,-50z" fill="#4dd0e1aa" stroke="#f0d78c" stroke-width="3"/><circle cx="30" cy="70" r="6" fill="#fff9"/><circle cx="46" cy="80" r="4" fill="#fff9"/><circle cx="38" cy="58" r="3" fill="#fff9"/></g>`,
+ english:`<g transform="translate(210,120) rotate(-12)"><rect width="70" height="90" rx="6" fill="#1a237e" stroke="#f0d78c" stroke-width="3"/><rect x="8" y="12" width="54" height="8" rx="2" fill="#f0d78c"/><rect x="8" y="28" width="40" height="5" rx="2" fill="#90caf9"/><rect x="8" y="40" width="48" height="5" rx="2" fill="#90caf9"/><text x="35" y="72" text-anchor="middle" font-size="14" fill="#fff" font-family="Kanit">ABC</text></g>`,
+ thai:`<g transform="translate(205,112) rotate(-8)"><rect width="80" height="92" rx="6" fill="#7b1f1f" stroke="#f0d78c" stroke-width="3"/><rect x="6" y="6" width="68" height="80" rx="4" fill="none" stroke="#f0d78c" stroke-width="1.5"/><text x="40" y="44" text-anchor="middle" font-size="22" fill="#f0d78c" font-family="Kanit">ก ข</text><text x="40" y="72" text-anchor="middle" font-size="12" fill="#fff" font-family="Kanit">วรรณคดี</text></g>`,
+ social:`<g transform="translate(250,160)"><circle r="40" fill="#1e88e5" stroke="#f0d78c" stroke-width="3"/><path d="M-22,-20 q12,-8 20,4 q8,10 -4,18 q-10,6 -16,-6z M8,6 q14,-4 18,10 q-6,14 -18,6z M4,-30 q10,0 14,8 q-8,4 -14,-8z" fill="#66bb6a"/><ellipse rx="40" ry="12" fill="none" stroke="#f0d78c88" stroke-width="1.5"/></g>`};
+const BOSS={
+ science:{name:"ครูออมยักษ์แห่งห้องแล็บ",story:"ผ่านด่านสาร เซลล์ และพืชมาได้ 3 ด่าน ประตูห้องแล็บทองคำเปิดออก ไอร้อนลอยฟุ้ง ฟ้าครึ้มเมฆก้อนใหญ่… <b>ครูออมยักษ์แห่งห้องแล็บ</b> ยืนเท้าสะเอว ยิ้มมั่น «ความร้อน ชั้นบรรยากาศ เมฆ พายุ และโลกร้อน ครูเตรียมไว้ครบ หนูพร้อมไหมจ๊ะ~»",
+  taunt:["ร้อนผสมเย็น สุดท้ายเป็นยังไงน้า~ 🔥","เมฆก้อนสูงเป็นหอคอยชื่ออะไรจ๊ะ? ⛈️","แสงอาทิตย์มาถึงโลกได้ยังไง ตอบได้ไหม~ ☀️"]},
+ math:{name:"ครูออมยักษ์แห่งตัวเลข",story:"ฝ่าดงจำนวนเต็ม ทศนิยม เศษส่วน และสมการมาได้ ตอนนี้กระดานกราฟยักษ์ปรากฏขึ้น… <b>ครูออมยักษ์แห่งตัวเลข</b> ถือเครื่องคิดเลขทองคำ «สัดส่วน ร้อยละ กำไร จุดบนกราฟ ครูเตรียมไว้ครบ อย่าใช้นิ้วนับนะจ๊ะ~»",
+  taunt:["กำไรร้อยละเท่าไร คิดจากทุนนะจ๊ะ 🧮","จุด (−3, 2) อยู่จตุภาคไหนน้า~","y = 2x − 1 แทนค่าทันไหม? หึหึ"]},
+ english:{name:"ครูออมยักษ์แห่งพจนานุกรม",story:"ผ่านด่านคำศัพท์ tense และการอ่านมาแล้ว พื้นสั่น… <b>ครูออมยักษ์แห่งพจนานุกรม</b> ถือพจนานุกรมเล่มยักษ์ «Are you ready? going to, must, ขั้นกว่า ขั้นสุด และ as…as ครูรออยู่~»",
+  taunt:["Look at those clouds! It's going to… ⛈️","must หรือ mustn't ดีจ๊ะ? 😏","the most interesting boss is ME!"]},
+ thai:{name:"ครูออมยักษ์แห่งวรรณคดี",story:"เสียง คำ และการใช้ภาษา หนูผ่านมาหมดแล้ว บัดนี้ม่านทองเปิด… <b>ครูออมยักษ์แห่งวรรณคดี</b> ถือสมุดไทยเล่มใหญ่ «นิราศภูเขาทอง โคลงโลกนิติ กาพย์เห่ฯ โคลงสี่สุภาพ กลอนสุภาพ ใครจำได้ครบ ครูยกให้เป็นกวีน้อย!»",
+  taunt:["โคลงสี่สุภาพมีเอกกี่แห่ง โทกี่แห่งจ๊ะ~ 📜","สุนทรภู่ล่องเรือไปไหนน้า? ⛵","สัมผัสกลอนไปคำที่เท่าไร ครูรอฟังอยู่!"]},
+ social:{name:"ครูออมยักษ์แห่งโลกกว้าง",story:"ศาสนา หน้าที่พลเมือง เศรษฐศาสตร์ และประวัติศาสตร์ผ่านไปแล้ว ลูกโลกยักษ์หมุนติ้ว… <b>ครูออมยักษ์แห่งโลกกว้าง</b> ปรากฏตัว «ลมมรสุม มาตราส่วน GPS และทวีปออสเตรเลีย เดินทางรอบโลกกับครูนะ~»",
+  taunt:["มาตราส่วน 1 : 50,000 คิดเป็นกิโลเมตรได้ไหม~ 🗺️","ลมมรสุมตะวันตกเฉียงใต้มาแล้ว เปียกแน่! 🌧️","ลูกโลกครูหมุนเร็วกว่าความคิดหนูนะ!"]}};
+const WRONG=["โอ๊ะ~ ใกล้แล้ว แต่ยังไม่ใช่","เดาสุ่ม ๆ เหรอ? ครูเห็นหมดเลยนะ~","ยังไม่หมดโอกาส หายใจลึก ๆ แล้วลุยต่อ","ครูยิ้มกว้างขึ้นอีกแล้ว 😈"];
+const RIGHT=["หึ! ไม่เลวนะ… ครูเริ่มสนใจแล้ว","ถูกต้อง~ แต่ข้อต่อไปยากกว่านี้","เก่งขึ้นเรื่อย ๆ ระวังครูจะภูมิใจนะ","โอ๊ย! โดนเต็ม ๆ 💥"];
+const VICTORY=["ยอมแล้ว! หนูคือแชมป์ของวิชานี้","ครูภูมิใจมาก — ไปสอบจริงได้เลย!"],DEFEAT=["แพ้บอสได้ แต่ห้ามแพ้ความพยายาม!","กลับไปทบทวนแล้วมาท้าใหม่นะ ครูรออยู่~"];
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+let S=load();function load(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return{}}}
+function persist(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}}
+S.best=S.best||{};
+const SCREENS=["sReg","sMap","sQuiz","sBossIntro","sBoss","sResult","sSummary"];
+function go(id){const w=$("wipe");w.classList.add("on");setTimeout(()=>{SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0);w.classList.remove("on")},180)}
+function bossArt(k,small){return BOSS_SVG.replace('<g id="PROPID"></g>',PROPS[k]).replace('class="boss-art"','class="boss-art'+(small?' small':'')+'"')}
+function setTaunt(el,t){el.style.opacity=0;setTimeout(()=>{el.innerHTML="💬 <strong>"+t+"</strong>";el.style.opacity=1},150)}
+const key=(k,st)=>k+"-"+st,starsOf=c=>c>=5?3:c>=4?2:c>=3?1:0;
+const starHtml=n=>'<span class="stars">'+"★".repeat(n)+'<span class="off">'+"★".repeat(3-n)+"</span></span>";
+const unlocked=(k,st)=>st===1||!!S.best[key(k,st-1)];
+
+// ===== REGISTER =====
+const PH=/^0[689]\d{8}$/,clean=x=>x.replace(/[\s-]/g,"");
+document.querySelectorAll("#sReg input,#sReg select").forEach(i=>i.addEventListener("input",()=>$("regErr").textContent=""));
+const v=id=>$(id).value.trim();
+function stepA(){const e=[];
+ if(!v("fname")||v("fname").split(/\s+/).length<2)e.push("กรอกชื่อและนามสกุลนักเรียน (เว้นวรรคระหว่างชื่อกับนามสกุล)");if(!v("fnick"))e.push("กรอกชื่อเล่น");
+ if(!/^1\s*\/\s*\d{1,2}$/.test(v("froom")))e.push("ชั้น/ห้อง ให้กรอกรูปแบบ 1/ห้อง เช่น 1/2");if(!v("fschool"))e.push("กรอกโรงเรียน");
+ if(v("fphone")&&!PH.test(clean(v("fphone"))))e.push("เบอร์โทรนักเรียนไม่ถูกต้อง (มือถือ 10 หลัก ขึ้นต้น 06/08/09)");return e}
+function showErr(e){$("regErr").innerHTML=e.length?"• "+e.join("<br>• "):"";return !e.length}
+function regStep(n){$("regA").classList.toggle("hidden",n!==1);$("regB").classList.toggle("hidden",n!==2);$("stp1").classList.toggle("on",n===1);$("stp2").classList.toggle("on",n===2);$("regErr").textContent="";window.scrollTo(0,0)}
+$("nextBtn").onclick=()=>{if(showErr(stepA()))regStep(2)};
+$("backBtn").onclick=()=>regStep(1);
+$("startBtn").onclick=()=>{const e=stepA();if(e.length){regStep(1);showErr(e);return}
+ if(!v("fpname")||v("fpname").split(/\s+/).length<2)e.push("กรอกชื่อและนามสกุลผู้ปกครอง");if(!v("fprel"))e.push("เลือกความเกี่ยวข้องกับนักเรียน");
+ if(v("fpphone")&&!PH.test(clean(v("fpphone"))))e.push("เบอร์โทรผู้ปกครองไม่ถูกต้อง (มือถือ 10 หลัก ขึ้นต้น 06/08/09)");
+ if(/\d{13}/.test(clean(v("fline"))))e.push("ช่อง LINE ID ไม่ต้องกรอกเลขบัตรประชาชน");
+ if(!$("fconsent").checked)e.push("ผู้ปกครองต้องติ๊กยินยอมตาม PDPA ก่อนเริ่มเล่น");
+ if(!showErr(e))return;const now=Date.now();
+ S={id:"M1-"+now.toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase(),
+  student:{name:v("fname"),nickname:v("fnick"),room:"ม."+v("froom").replace(/\s/g,""),school:v("fschool"),phone:clean(v("fphone")),
+   parentName:v("fpname"),parentRelation:v("fprel"),parentPhone:clean(v("fpphone")),parentLine:v("fline"),consent:true,consentAt:new Date(now).toISOString(),consentVersion:"pdpa-v2-2569"},
+  qset:"v2",startedAt:now,best:{},sent:false};
+ persist();renderMap();go("sMap")};
+if(CFG.SAVE_URL)$("pdpaLocal").innerHTML+=" และจะส่งให้โรงเรียนผ่านระบบบันทึกผลออนไลน์";
+
+// ===== MAP =====
+const XS=[22,74,30,62],YS=[13,36,59,80],DECO={science:["🧪","🌱"],math:["📐","🔢"],english:["🔤","💬"],thai:["📜","🪷"],social:["🏛️","🧭"]};
+function renderMap(){let done=0;$("mapWho").textContent="น้อง"+S.student.nickname;
+ $("zones").innerHTML=ORDER.map((k,zi)=>{const s=QB[k];let pts=0;
+  const nodes=s.stages.map((nm,i)=>{const st=i+1,b=S.best[key(k,st)],open=unlocked(k,st),boss=st===4;if(b){done++;pts+=b.c}
+   const cls=(b?"done":open?"open":"locked")+(boss?" boss-node":"");
+   return `<button class="node ${cls}" style="left:${XS[i]}%;top:${YS[i]}%" data-k="${k}" data-st="${st}" ${open?"":"disabled"}><div class="c">${boss?"👑":open?st:"🔒"}</div><div class="lb">${boss?"บอส · ":"ด่าน "+st+" · "}${esc(nm.replace(/^บอส: |^Boss: /,""))}<br>${b?starHtml(b.stars)+" "+b.c+"/5":open?"พร้อมเล่น":"ล็อก"}</div></button>`}).join("");
+  const road=`<svg class="road" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M${XS.map((x,i)=>x+","+YS[i]).join(" L")}" fill="none" stroke="#f0d78c66" stroke-width="1.6" stroke-dasharray="3 2" vector-effect="non-scaling-stroke" style="stroke-width:5px"/></svg>`;
+  return `<div class="zone"><div class="zt"><span>${s.icon} โซน ${zi+1} · ${s.name}</span><small>${pts}/20 คะแนน</small></div><div class="path">${road}<span class="deco" style="left:80%;top:8%">${DECO[k][0]}</span><span class="deco" style="left:6%;top:72%">${DECO[k][1]}</span>${nodes}</div></div>`}).join("");
+ $("mapBar").style.width=done/20*100+"%";$("mapProg").textContent=done+"/20 ด่าน";
+ document.querySelectorAll(".node").forEach(n=>n.onclick=()=>startStage(n.dataset.k,+n.dataset.st))}
+$("toSummary").onclick=()=>{renderSummary();go("sSummary")};
+$("logout").onclick=()=>{if(confirm("ล้างข้อมูลผู้เล่นและความคืบหน้าในเครื่องนี้?")){localStorage.removeItem(LS);location.reload()}};
+
+// ===== PLAY =====
+let P=null;
+function startStage(k,st){if(!unlocked(k,st))return;
+ const items=shuffle(QB[k].questions.filter(q=>q.stage===st)).map(q=>{const idx=shuffle([0,1,2,3]);return{...q,choices:idx.map(i=>q.choices[i]),answer:idx.indexOf(q.answer)}});
+ P={k,st,items,i:0,ans:[],hearts:CFG.HEARTS,hp:100,boss:st===4,locked:false};
+ if(P.boss){const B=BOSS[k];$("resBox").innerHTML="";$("bfArt").innerHTML="";$("biArt").innerHTML=bossArt(k);$("biName").textContent=B.name;$("biStory").innerHTML=B.story;$("biTaunt").innerHTML="💬 <strong>"+pick(B.taunt)+"</strong>";go("sBossIntro")}
+ else{go("sQuiz");setTimeout(renderQ,200)}}
+$("biFight").onclick=()=>{$("biArt").innerHTML="";$("bfArt").innerHTML=bossArt(P.k,true);$("bfName").textContent="HP บอส · "+BOSS[P.k].name;setTaunt($("bfTaunt"),pick(BOSS[P.k].taunt));go("sBoss");setTimeout(renderQ,200)};
+$("biBack").onclick=()=>{renderMap();go("sMap")};
+const pre=()=>P.boss?"bf":"q";
+function renderQ(){const it=P.items[P.i],p=pre();P.locked=false;
+ $(p+"Head").innerHTML=`${QB[P.k].icon} ${P.boss?"บอส":"ด่าน "+P.st} · ข้อ ${P.i+1}/5 <span class="tag">${it.level}</span>`;
+ $(p+"Hearts").textContent="❤️".repeat(P.hearts)+"🖤".repeat(CFG.HEARTS-P.hearts);
+ if(!P.boss)$("qBar").style.width=P.i/5*100+"%";else{$("bfBar").style.width=P.hp+"%";$("bfHp").textContent=P.hp+"%"}
+ $(p+"Text").textContent=it.q;$(p+"Fb").textContent="";$(p+"Next").classList.add("hidden");
+ $(p+"Opts").innerHTML="";it.choices.forEach((c,j)=>{const b=document.createElement("button");b.className="btn opt";b.textContent=TH[j]+". "+c;b.onclick=()=>answer(j);$(p+"Opts").appendChild(b)})}
+function answer(j){if(P.locked)return;P.locked=true;const it=P.items[P.i],p=pre(),ok=j===it.answer;P.ans[P.i]=j;
+ const bs=$(p+"Opts").querySelectorAll(".opt");bs.forEach((b,x)=>{b.disabled=true;if(x===it.answer)b.classList.add("ok");else if(x===j)b.classList.add("bad")});
+ if(!ok)P.hearts--;
+ if(P.boss){if(ok){P.hp=Math.max(0,P.hp-CFG.BOSS_DAMAGE);const sp=document.querySelector("#bfArt svg");sp.classList.remove("hit");void sp.offsetWidth;sp.classList.add("hit")}
+  setTaunt($("bfTaunt"),pick(ok?RIGHT:WRONG));$("bfBar").style.width=P.hp+"%";$("bfHp").textContent=P.hp+"%"}
+ $(p+"Hearts").textContent="❤️".repeat(Math.max(0,P.hearts))+"🖤".repeat(CFG.HEARTS-Math.max(0,P.hearts));
+ $(p+"Fb").innerHTML=ok?'<span class="ok">✔ ถูกต้อง!</span>':'<span class="bad">✘ ยังไม่ถูก — เฉลยดูได้ตอนจบด่าน</span>'+(P.hearts<=0?' <span class="bad">หัวใจหมดแล้ว!</span>':"");
+ const last=P.i===4||P.hearts<=0;const nb=$(p+"Next");nb.textContent=last?"ดูผลด่าน ▶":"ข้อต่อไป ▶";nb.classList.remove("hidden")}
+$("qNext").onclick=$("bfNext").onclick=()=>{if(P.i===4||P.hearts<=0)finish();else{P.i++;renderQ()}};
+$("qQuit").onclick=()=>{if(confirm("ออกจากด่านนี้? ความคืบหน้าในด่านนี้จะไม่ถูกบันทึก")){renderMap();go("sMap")}};
+
+function finish(){const c=P.items.reduce((s,it,i)=>s+(P.ans[i]===it.answer?1:0),0),stars=starsOf(c),k=P.k,K=key(k,P.st),prev=S.best[K];
+ const win=P.boss&&P.hp<=0&&P.hearts>0;
+ if(!prev||c>prev.c)S.best[K]={c,stars,at:new Date().toISOString(),topics:P.items.map((it,i)=>({topic:it.topic,ok:P.ans[i]===it.answer}))};
+ S.plays=(S.plays||0)+1;persist();
+ const R=$("resBox"),s=QB[k];$("bfArt").innerHTML="";$("biArt").innerHTML="";
+ R.innerHTML=`${P.boss?bossArt(k,true):`<div class="big">${stars===3?"🏆":stars>0?"🎉":"💪"}</div>`}
+ <h2 style="text-align:center">${P.boss?(win?"ชนะบอสแล้ว! "+BOSS[k].name+" ยอมแพ้":"พ่ายบอสในรอบนี้"):`จบด่าน ${P.st} · ${esc(s.stages[P.st-1])}`}</h2>
+ ${P.boss?`<div class="taunt">💬 <strong>${pick(win?VICTORY:DEFEAT)}</strong></div>`:""}
+ <div class="score">${c} / 5</div><div style="text-align:center">${starHtml(stars)}</div>
+ ${P.hearts<=0?`<p class="bad" style="text-align:center">หัวใจหมดก่อนจบด่าน ข้อที่ยังไม่ได้ตอบนับว่าผิด</p>`:""}
+ <p class="muted" style="text-align:center">คะแนนที่ดีที่สุดของด่านนี้: ${S.best[K].c}/5 · ${s.name}รวม ${subj(k)}/20</p>
+ <div class="actions"><button class="btn go" id="rMap">🗺️ กลับแผนที่</button><button class="btn reset" id="rAgain">🔁 เล่นซ้ำ</button>${P.st<4?`<button class="btn reset" id="rNext">ด่านต่อไป ▶</button>`:""}</div>
+ <h2 style="margin-top:16px">📘 เฉลยและคำอธิบาย</h2>${P.items.map((it,i)=>`<div class="rev"><b>ข้อ ${i+1}</b> <span class="tag">${esc(it.topic)}</span> ${esc(it.q).replace(/\n/g,"<br>")}<br>
+ ${P.ans[i]===it.answer?'<span class="ok">✔ ถูก</span>':`<span class="bad">✘ ${P.ans[i]===undefined?"ไม่ได้ตอบ":"ตอบ "+esc(it.choices[P.ans[i]])}</span>`} · เฉลย: <b>${esc(it.choices[it.answer])}</b><br><span class="muted">💡 ${esc(it.explain)}</span></div>`).join("")}`;
+ go("sResult");const st=P.st;
+ setTimeout(()=>{$("rMap").onclick=()=>{renderMap();go("sMap")};$("rAgain").onclick=()=>startStage(k,st);if($("rNext"))$("rNext").onclick=()=>startStage(k,st+1)},200);
+ if(CFG.SAVE_URL&&CFG.SEND_EACH_STAGE)post({type:"stage",id:S.id,qset:"v2",registration:S.student,stage:{subject:s.name,stage:st,name:s.stages[st-1],correct:c,total:5,stars,boss:P.boss,win},submittedAt:new Date().toISOString()});
+ if(allDone()&&!S.sent)sendFinal()}
+const subj=k=>[1,2,3,4].reduce((s,st)=>s+(S.best[key(k,st)]?.c||0),0);
+const allDone=()=>ORDER.every(k=>[1,2,3,4].every(st=>S.best[key(k,st)]));
+
+// ===== SUMMARY =====
+function analysis(){const t={};ORDER.forEach(k=>[1,2,3,4].forEach(st=>(S.best[key(k,st)]?.topics||[]).forEach(x=>{const id=k+"|"+x.topic;t[id]=t[id]||{subj:k,topic:x.topic,c:0,n:0};t[id].n++;if(x.ok)t[id].c++})));
+ return Object.values(t).map(x=>({...x,p:x.c/x.n}))}
+function renderSummary(){const tot=ORDER.reduce((s,k)=>s+subj(k),0),done=Object.keys(S.best).length,tl=analysis();
+ const strong=tl.filter(t=>t.p>=0.75&&t.n>=2),weak=tl.filter(t=>t.p<0.5);
+ $("sumBox").innerHTML=`<h2>📊 สรุปคะแนนของน้อง${esc(S.student.nickname)}</h2><p class="muted" style="margin:0">${esc(S.student.name)} · ${esc(S.student.room)} · โรงเรียน${esc(S.student.school.replace(/^โรงเรียน/,""))}<br>ผู้ปกครอง: ${esc(S.student.parentName||"-")}${S.student.parentRelation?" ("+esc(S.student.parentRelation)+")":""}</p>
+ <div class="score" style="margin-top:10px">${tot} / 100</div><p class="muted" style="text-align:center">เล่นครบ ${done}/20 ด่าน${done<20?" (ด่านที่ยังไม่เล่นนับ 0 คะแนน)":""}</p>
+ <table><tr><th>วิชา</th><th>ด่าน 1–3 · บอส</th><th>คะแนน</th></tr>${ORDER.map(k=>`<tr><td>${QB[k].icon} ${QB[k].name}</td><td>${[1,2,3,4].map(st=>S.best[key(k,st)]?S.best[key(k,st)].c:"–").join(" · ")}</td><td><b>${subj(k)} / 20</b></td></tr>`).join("")}
+ <tr><th>รวม</th><th></th><th>${tot} / 100</th></tr></table>
+ ${tot>=CFG.REWARD_THRESHOLD?`<p class="ok" style="text-align:center;font-size:18px">🏆 คะแนนถึงเกณฑ์รางวัลพิเศษ (${CFG.REWARD_THRESHOLD}+)</p>`:""}
+ ${tl.length?`<h2 style="margin-top:14px" class="ok">จุดแข็ง</h2><p class="muted">${strong.map(t=>QB[t.subj].name+": "+esc(t.topic)).join(" · ")||"ยังไม่มี"}</p><h2 class="bad">เรื่องที่ควรทบทวน</h2><p class="muted">${weak.map(t=>QB[t.subj].name+": "+esc(t.topic)).join(" · ")||"ไม่มี — เยี่ยมมาก!"}</p>`:""}
+ <p id="saveStatus" class="muted" style="text-align:center">${!CFG.SAVE_URL?"✔ บันทึกคะแนนไว้ในเครื่องนี้แล้ว · แคปหน้าจอนี้ส่งให้คุณครูได้เลย":S.sent?"✔ ส่งผลรวมให้ครูแล้ว":done<20?"ผลรวมจะส่งให้ครูอัตโนมัติเมื่อเล่นครบ 20 ด่าน":""}</p>
+ <div class="actions"><button class="btn go" id="sMapBtn">🗺️ กลับแผนที่</button>${CFG.SAVE_URL&&done===20?'<button class="btn reset" id="sSend">📤 ส่งผลอีกครั้ง</button>':""}</div>`;
+ setTimeout(()=>{$("sMapBtn").onclick=()=>{renderMap();go("sMap")};if($("sSend"))$("sSend").onclick=()=>sendFinal(true)},0)}
+function sendFinal(force){if(!CFG.SAVE_URL)return;const pts={},tl=analysis();let total=0;ORDER.forEach(k=>{pts[k]=subj(k);total+=pts[k]});
+ const strong=tl.filter(t=>t.p>=0.75&&t.n>=2).map(t=>QB[t.subj].name+": "+t.topic).join(", "),weak=tl.filter(t=>t.p<0.5).map(t=>QB[t.subj].name+": "+t.topic).join(", ");
+ post({type:"final",id:S.id,qset:"v2",registration:S.student,scores:{...pts,total,correct:total,questions:100,perSubject:20,plays:S.plays||0,minutes:Math.round((Date.now()-S.startedAt)/6000)/10,reward:total>=CFG.REWARD_THRESHOLD},
+  topics:tl.map(t=>({subject:QB[t.subj].name,topic:t.topic,correct:t.c,total:t.n,percent:Math.round(t.p*100)})),strong,weak,submittedAt:new Date().toISOString()},ok=>{if(ok){S.sent=true;persist()}const e=$("saveStatus");if(e)e.textContent=ok?"✔ ส่งผลรวมให้ครูแล้ว":"ส่งผลไม่สำเร็จ ลองกดส่งอีกครั้ง"})}
+function post(p,cb){const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),15000);
+ fetch(CFG.SAVE_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(p),signal:ctl.signal}).then(()=>cb&&cb(true)).catch(()=>cb&&cb(false)).finally(()=>clearTimeout(to))}
+
+// ===== BOOT =====
+if(S.student){renderMap();SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!=="sMap"))}
+</script></body></html>
