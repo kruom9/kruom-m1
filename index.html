@@ -22,8 +22,9 @@
   --font:Kanit,Sarabun,Tahoma,sans-serif;--font-body:Sarabun,Kanit,Tahoma,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:var(--font);background:radial-gradient(1200px 600px at 10% -10%,#2a1f6e55,transparent),radial-gradient(900px 500px at 100% 0%,#7a4b1055,transparent),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--cream);min-height:100vh}
-main{max-width:720px;margin:0 auto;padding:10px 10px 40px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px;scroll-padding-bottom:120px}
+body{margin:0;font-family:var(--font);background:radial-gradient(1200px 600px at 10% -10%,#2a1f6e55,transparent),radial-gradient(900px 500px at 100% 0%,#7a4b1055,transparent),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--cream);min-height:100vh;min-height:100dvh;overflow-x:hidden;overscroll-behavior-y:auto}
+main{max-width:720px;margin:0 auto;padding:calc(10px + env(safe-area-inset-top)) calc(10px + env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left));overflow-x:clip}
 .hero{display:flex;gap:12px;align-items:center;background:linear-gradient(120deg,#1a1440ee,#2a1a55ee 40%,#4a2c0aee);border:1px solid var(--line);border-radius:22px;padding:12px 14px;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,#d4af3722 50%,transparent 60%);pointer-events:none;animation:shimmer 6s infinite}
 @keyframes shimmer{0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
@@ -32,19 +33,31 @@ main{max-width:720px;margin:0 auto;padding:10px 10px 40px}
 .ttl .sub{font-size:12px;color:var(--muted);font-family:var(--font-body)}
 .slogan{margin:3px 0 0;font-size:12px;font-weight:600;background:linear-gradient(90deg,var(--gold2),#fff8e7,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .slogan::before{content:"✦ ";-webkit-text-fill-color:var(--gold)}.slogan::after{content:" ✦";-webkit-text-fill-color:var(--gold)}
-.btn{border:0;border-radius:12px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer}
+.btn{border:0;border-radius:12px;padding:10px 14px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:#d4af3755}
+button,select,input,label{touch-action:manipulation}
 .reset{background:#ffffff14;color:var(--cream);border:1px solid var(--line)}
 .go{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;font-size:16px;padding:12px 18px;box-shadow:0 4px 0 var(--gold3),0 8px 20px #d4af3744}
 .go:disabled{filter:grayscale(1);opacity:.6}
 .panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-top:12px;box-shadow:var(--shadow)}
 .panel h2{margin:0 0 8px;font-size:18px;color:var(--gold2)}
 label{display:block;font-size:14px;margin-top:8px;font-family:var(--font-body)}
-input[type=text],input[type=tel],input:not([type]),select{width:100%;padding:11px;font:inherit;font-size:16px;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:#0b1020;color:var(--cream)}
+input[type=text],input[type=tel],input:not([type]),select{width:100%;min-height:48px;padding:11px;font:inherit;font-size:16px;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:#0b1020;color:var(--cream)}
+select{-webkit-appearance:none;appearance:none;padding-right:40px;background:#0b1020 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23f0d78c' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center;cursor:pointer}
+select option{color:#111;background:#fff}
+input:focus,select:focus,.chip:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.lbl{font-size:14px;margin-top:10px;font-family:var(--font-body)}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin-top:6px}
+.chip{min-height:48px;border-radius:12px;border:2px solid var(--line);background:#0b1020;color:var(--cream);font:inherit;font-size:16px;font-weight:600;cursor:pointer;padding:6px;touch-action:manipulation;-webkit-tap-highlight-color:#d4af3755}
+.chip.on{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;border-color:var(--gold2)}
+.chip.wide{grid-column:span 2}
+.topnav{display:flex;align-items:center;gap:8px;margin:0 0 8px}.topnav .btn{padding:8px 12px}
+.xbtn{min-width:44px;min-height:44px;padding:6px 10px;font-size:15px}
+.invalid{border-color:var(--bad)!important;box-shadow:0 0 0 2px #ff6b7a55}
 .pdpa{background:#3a2a1066;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;font-family:var(--font-body);color:var(--muted);margin:12px 0;line-height:1.55}.pdpa b{color:var(--gold2)}
-.steps{display:flex;gap:6px;margin:8px 0 2px;font-size:12px;font-family:var(--font-body)}.steps span{flex:1;text-align:center;padding:5px;border-radius:999px;background:#ffffff10;color:var(--muted);border:1px solid #ffffff18}.steps span.on{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;font-weight:600}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px;font-size:12px;font-family:var(--font-body)}.steps span{flex:1 1 120px;cursor:pointer;text-align:center;padding:6px;min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#ffffff10;color:var(--muted);border:1px solid #ffffff18}.steps span.on{background:linear-gradient(90deg,var(--gold3),var(--gold));color:#1a1200;font-weight:600}
 .pdpa ul{margin:6px 0;padding-left:18px}.pdpa li{margin:3px 0}
-.err{color:var(--bad);font-family:var(--font-body);font-size:14px}
-.stat{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:14px;padding:7px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px}
+.err{color:var(--bad);font-family:var(--font-body);font-size:14px}.err:not(:empty){background:#5a1a2244;border:1px solid var(--bad);border-radius:10px;padding:8px 10px;margin-top:8px}
+.stat{min-width:0;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:14px;padding:7px 12px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px}
 .pbar{flex:1;height:10px;background:#ffffff18;border-radius:8px;overflow:hidden}.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2));transition:width .5s}
 .zone{margin-top:14px;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;background:radial-gradient(ellipse at 20% 30%,#2a1f6e66,transparent 50%),radial-gradient(ellipse at 80% 60%,#5a3a1066,transparent 45%),linear-gradient(#0e1630,#152045 55%,#0f2418)}
 .zone .zt{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;color:#1a1200;font-weight:800;font-size:14px;background:linear-gradient(90deg,var(--gold3),var(--gold2))}
@@ -72,7 +85,7 @@ svg.road{position:absolute;inset:0;width:100%;height:100%}
 .hearts{font-size:20px;letter-spacing:2px}
 .qtext{font-size:18px;line-height:1.55;margin:12px 0;white-space:pre-wrap;font-family:var(--font-body);color:#fff}
 .opts{display:grid;gap:8px}
-.opt{text-align:left;background:#ffffff0c;border:2px solid #ffffff18;color:var(--cream);font-size:16px;font-family:var(--font-body);padding:12px 14px;border-radius:14px;width:100%}
+.opt{text-align:left;min-height:48px;background:#ffffff0c;border:2px solid #ffffff18;color:var(--cream);font-size:16px;font-family:var(--font-body);padding:12px 14px;border-radius:14px;width:100%}
 .opt.ok{background:#1b5e3a;border-color:var(--ok)}.opt.bad{background:#5a1a22;border-color:var(--bad)}
 .feedback{font-family:var(--font-body);margin-top:10px;min-height:24px;font-weight:600}
 .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:8px;background:#3a2a55;color:#d4bfff;margin-right:4px}
@@ -88,12 +101,14 @@ svg.road{position:absolute;inset:0;width:100%;height:100%}
 .hpbar{height:16px;background:#ffffff15;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
 .hpbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#c62828,#ff8a65,#f0d78c);transition:width .45s}
 .story{font-family:var(--font-body);font-size:14px;line-height:1.65;color:var(--muted);background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:12px;margin:10px 0}
-.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}.actions .btn{flex:1 1 140px}
 .big{font-size:56px;text-align:center}.score{font-size:40px;font-weight:800;text-align:center;color:var(--gold2)}
 .rev{font-family:var(--font-body);font-size:14px;border-bottom:1px solid #ffffff12;padding:10px 0;line-height:1.5}
 .ok{color:var(--ok)}.bad{color:var(--bad)}.muted{color:var(--muted);font-family:var(--font-body)}
-table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;border-bottom:1px solid #ffffff14;text-align:left}th{color:var(--gold2)}
+table{width:100%;border-collapse:collapse;font-size:14px;word-break:break-word}td,th{padding:8px 6px;border-bottom:1px solid #ffffff14;text-align:left}th{color:var(--gold2)}
 .note{font-family:var(--font-body);font-size:12px;color:var(--muted);text-align:center;margin-top:16px}
+@media (max-width:360px){.ttl h1{font-size:17px}.panel{padding:12px}.node{width:104px}.node .lb{font-size:10.5px}}
+@media (orientation:landscape) and (max-height:500px){.path{height:360px}.boss-art{width:min(170px,30vw)}.boss-art.small{width:min(110px,22vw)}}
 </style></head><body>
 <div class="wipe" id="wipe"></div>
 <main>
@@ -104,20 +119,24 @@ table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;b
 <section id="sReg" class="screen panel">
 <h2>ลงทะเบียนผู้เล่น</h2>
 <p class="muted" style="margin:0">5 วิชา (วิทย์ คณิต อังกฤษ ไทย สังคม) วิชาละ 4 ด่าน ด่านละ 5 ข้อ ด่านที่ 4 ของทุกวิชาคือ <b style="color:var(--gold2)">บอสครูออม</b> · วิชาละ 20 คะแนน รวม 100 คะแนน</p>
-<div class="steps"><span id="stp1" class="on">1 · ข้อมูลนักเรียน</span><span id="stp2">2 · ผู้ปกครองและความยินยอม</span></div>
+<div class="steps"><span id="stp1" class="on" role="button" tabindex="0">1 · ข้อมูลนักเรียน</span><span id="stp2" role="button" tabindex="0">2 · ผู้ปกครองและความยินยอม</span></div>
+<div id="regErr" class="err" role="alert" aria-live="polite"></div>
 <div id="regA">
-<label>ชื่อ-นามสกุล นักเรียน *<input id="fname" autocomplete="name"></label>
-<label>ชื่อเล่น *<input id="fnick"></label>
-<label>ชั้น ม.1 / ห้อง * (เช่น 1/2)<input id="froom" inputmode="numeric"></label>
-<label>โรงเรียน *<input id="fschool" value="ปิยมิตรวิทยา"></label>
-<label>เบอร์โทรนักเรียน (ไม่บังคับ)<input id="fphone" type="tel" inputmode="tel" placeholder="มือถือ 10 หลัก"></label>
+<label>ชื่อ-นามสกุล นักเรียน *<input id="fname" type="text" autocomplete="name" enterkeyhint="next"></label>
+<label>ชื่อเล่น *<input id="fnick" type="text" autocomplete="off" enterkeyhint="next"></label>
+<div class="lbl" id="roomLbl">ชั้น ม.1 · ห้อง * <span class="muted">(แตะเลือกเลขห้อง)</span></div>
+<div class="chips" id="roomChips" role="radiogroup" aria-labelledby="roomLbl"><button type="button" class="chip" role="radio" aria-checked="false" data-room="1">ม.1/1</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="2">ม.1/2</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="3">ม.1/3</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="4">ม.1/4</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="5">ม.1/5</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="6">ม.1/6</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="7">ม.1/7</button><button type="button" class="chip" role="radio" aria-checked="false" data-room="8">ม.1/8</button><button type="button" class="chip wide" role="radio" aria-checked="false" data-room="other">ห้องอื่น ✏️</button></div>
+<label id="roomOther" class="hidden">พิมพ์ชั้น/ห้อง (เช่น 1/9 หรือพิมพ์แค่เลขห้อง 9)<input id="froom" type="text" inputmode="text" autocomplete="off" enterkeyhint="next" placeholder="เช่น 1/9"></label>
+<label>โรงเรียน *<input id="fschool" type="text" value="ปิยมิตรวิทยา" enterkeyhint="next"></label>
+<label>เบอร์โทรนักเรียน (ไม่บังคับ)<input id="fphone" type="tel" inputmode="tel" enterkeyhint="done" placeholder="มือถือ 10 หลัก"></label>
 <button class="btn go" id="nextBtn" style="width:100%;margin-top:14px">ถัดไป: ข้อมูลผู้ปกครอง ▶</button>
 </div>
 <div id="regB" class="hidden">
-<label>ชื่อ-นามสกุล ผู้ปกครอง *<input id="fpname" autocomplete="off"></label>
+<div class="topnav"><button type="button" class="btn reset" id="backTop">◀ กลับไปขั้นที่ 1</button></div>
+<label>ชื่อ-นามสกุล ผู้ปกครอง *<input id="fpname" type="text" autocomplete="off" enterkeyhint="next"></label>
 <label>ความเกี่ยวข้องกับนักเรียน *<select id="fprel"><option value="">— เลือก —</option><option>บิดา</option><option>มารดา</option><option>ปู่/ย่า/ตา/ยาย</option><option>พี่/ญาติ</option><option>ผู้ปกครองตามกฎหมาย/อื่น ๆ</option></select></label>
-<label>เบอร์โทรผู้ปกครอง (ไม่บังคับ)<input id="fpphone" type="tel" inputmode="tel" placeholder="มือถือ 10 หลัก"></label>
-<label>LINE ID ผู้ปกครอง (ไม่บังคับ)<input id="fline" autocomplete="off"></label>
+<label>เบอร์โทรผู้ปกครอง (ไม่บังคับ)<input id="fpphone" type="tel" inputmode="tel" enterkeyhint="next" placeholder="มือถือ 10 หลัก"></label>
+<label>LINE ID ผู้ปกครอง (ไม่บังคับ)<input id="fline" type="text" autocomplete="off" enterkeyhint="done"></label>
 <div class="pdpa"><b>ความยินยอมของผู้ปกครอง (พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562)</b>
 <ul>
 <li><b>ข้อมูลที่เก็บ:</b> ชื่อ-นามสกุล ชื่อเล่น ชั้น/ห้อง โรงเรียน เบอร์นักเรียน (ถ้ากรอก) ชื่อผู้ปกครอง ความเกี่ยวข้อง เบอร์โทรและ LINE ID ผู้ปกครอง (ถ้ากรอก) และผลการเล่นแต่ละด่าน · <b>ไม่เก็บเลขบัตรประชาชน</b></li>
@@ -126,24 +145,29 @@ table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;b
 <li><b>สิทธิของผู้ปกครอง:</b> ขอดู แก้ไข ลบข้อมูล หรือถอนความยินยอมได้ทุกเมื่อ โดยติดต่อครูออม (ครูผู้ดูแลโครงการ) โรงเรียนปิยมิตรวิทยา</li>
 <li id="pdpaLocal"><b>ในเครื่องนี้:</b> ข้อมูลและคะแนนบันทึกไว้ในเบราว์เซอร์ของเครื่องนี้ ลบได้ทุกเมื่อด้วยปุ่ม "เปลี่ยนผู้เล่น"</li>
 </ul>
-<label style="display:flex;gap:8px;align-items:flex-start;color:var(--cream)"><input type="checkbox" id="fconsent" style="width:22px;height:22px;margin-top:2px;flex-shrink:0"> <span>ข้าพเจ้าเป็นผู้ปกครองของนักเรียน หรือได้รับอนุญาตจากผู้ปกครองแล้ว และยินยอมให้เก็บและใช้ข้อมูลตามที่ระบุข้างต้น *</span></label></div>
-<div class="actions" style="margin-top:4px"><button class="btn reset" id="backBtn">◀ แก้ไขข้อมูลนักเรียน</button><button class="btn go" id="startBtn" style="flex:1">🗺️ เริ่มผจญภัย</button></div>
+<label style="display:flex;gap:10px;align-items:flex-start;color:var(--cream);min-height:44px;padding:4px 0;cursor:pointer"><input type="checkbox" id="fconsent" style="width:28px;height:28px;margin:0;flex-shrink:0;accent-color:#d4af37"> <span>ข้าพเจ้าเป็นผู้ปกครองของนักเรียน หรือได้รับอนุญาตจากผู้ปกครองแล้ว และยินยอมให้เก็บและใช้ข้อมูลตามที่ระบุข้างต้น *</span></label></div>
+<div class="actions" style="margin-top:4px"><button type="button" class="btn reset" id="backBtn">◀ แก้ไขข้อมูลนักเรียน</button><button class="btn go" id="startBtn" style="flex:1">🗺️ เริ่มผจญภัย</button></div>
 </div>
-<div id="regErr" class="err"></div>
+</section>
+
+<!-- HOME (ผู้เล่นที่ลงทะเบียนแล้ว) -->
+<section id="sHome" class="screen panel hidden">
+<h2 id="homeHi"></h2><p class="muted" id="homeInfo" style="margin:0 0 6px"></p>
+<div class="actions" style="flex-direction:column"><button class="btn go" id="homeMap">🗺️ ไปแผนที่ผจญภัย</button><button class="btn reset" id="homeSum">📊 สรุปคะแนน</button><button class="btn reset" id="homeLogout" style="font-size:14px">เปลี่ยนผู้เล่น (ล้างข้อมูลในเครื่องนี้)</button></div>
 </section>
 
 <!-- MAP -->
 <section id="sMap" class="screen hidden">
-<div class="panel" style="padding:10px 12px"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-<div class="stat" style="flex:1;min-width:200px">🏅 <span id="mapWho"></span><div class="pbar"><i id="mapBar"></i></div><span id="mapProg"></span></div>
+<div class="panel" style="padding:10px 12px"><div class="topnav"><button type="button" class="btn reset" id="mapHome">◀ หน้าแรก</button></div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+<div class="stat" style="flex:1 1 200px">🏅 <span id="mapWho"></span><div class="pbar"><i id="mapBar"></i></div><span id="mapProg"></span></div>
 <button class="btn reset" id="toSummary">📊 สรุปคะแนน</button></div></div>
 <div id="zones"></div>
-<p class="note">เล่นด่านต่อไปได้เมื่อผ่านด่านก่อนหน้า (ทำครบ 5 ข้อ) · เล่นซ้ำได้ ระบบเก็บคะแนนที่ดีที่สุด<br><button class="btn reset" id="logout" style="margin-top:8px;font-size:12px">เปลี่ยนผู้เล่น (ล้างข้อมูลในเครื่องนี้)</button></p>
+<p class="note">เล่นด่านต่อไปได้เมื่อผ่านด่านก่อนหน้า (ทำครบ 5 ข้อ) · เล่นซ้ำได้ ระบบเก็บคะแนนที่ดีที่สุด<br><button class="btn reset" id="logout" style="margin-top:8px;font-size:13px">เปลี่ยนผู้เล่น (ล้างข้อมูลในเครื่องนี้)</button></p>
 </section>
 
 <!-- QUIZ -->
 <section id="sQuiz" class="screen hidden"><div class="panel">
-<div class="qtop"><span id="qHead"></span><span class="hearts" id="qHearts"></span></div>
+<div class="qtop"><button type="button" class="btn reset xbtn" id="qX" aria-label="ออกไปแผนที่">✕</button><span id="qHead" style="flex:1"></span><span class="hearts" id="qHearts"></span></div>
 <div class="pbar" style="margin-top:8px"><i id="qBar"></i></div>
 <div class="qtext" id="qText"></div><div class="opts" id="qOpts"></div>
 <div class="feedback" id="qFb"></div>
@@ -152,6 +176,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;b
 
 <!-- BOSS INTRO -->
 <section id="sBossIntro" class="screen hidden"><div class="boss-stage">
+<div class="topnav"><button type="button" class="btn reset xbtn" id="biX">◀ แผนที่</button></div>
 <div id="biArt"></div><div class="taunt" id="biTaunt"></div>
 <h2 style="text-align:center;color:var(--gold2);margin:6px 0 0" id="biName"></h2>
 <div class="story" id="biStory"></div>
@@ -160,11 +185,11 @@ table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 6px;b
 
 <!-- BOSS FIGHT -->
 <section id="sBoss" class="screen hidden"><div class="boss-stage">
-<div class="hp-label"><span id="bfName"></span><span id="bfHp">100%</span></div><div class="hpbar"><i id="bfBar"></i></div>
+<div class="topnav"><button type="button" class="btn reset xbtn" id="bfX" aria-label="ออกไปแผนที่">✕ ออก</button></div><div class="hp-label"><span id="bfName"></span><span id="bfHp">100%</span></div><div class="hpbar"><i id="bfBar"></i></div>
 <div class="qtop" style="margin-top:8px"><span id="bfHead"></span><span class="hearts" id="bfHearts"></span></div>
 <div id="bfArt"></div><div class="taunt" id="bfTaunt"></div>
 <div class="qtext" id="bfText"></div><div class="opts" id="bfOpts"></div><div class="feedback" id="bfFb"></div>
-<div class="actions"><button class="btn go hidden" id="bfNext">ข้อต่อไป ▶</button></div>
+<div class="actions"><button class="btn reset" id="bfQuit">🗺️ ออกไปแผนที่</button><button class="btn go hidden" id="bfNext">ข้อต่อไป ▶</button></div>
 </div></section>
 
 <!-- RESULT -->
@@ -254,8 +279,30 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 let S=load();function load(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return{}}}
 function persist(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}}
 S.best=S.best||{};
-const SCREENS=["sReg","sMap","sQuiz","sBossIntro","sBoss","sResult","sSummary"];
-function go(id){const w=$("wipe");w.classList.add("on");setTimeout(()=>{SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0);w.classList.remove("on")},180)}
+const SCREENS=["sReg","sHome","sMap","sQuiz","sBossIntro","sBoss","sResult","sSummary"];
+let CUR=null;
+function show(id){CUR=id;const w=$("wipe");w.classList.add("on");setTimeout(()=>{SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!==id));if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();window.scrollTo(0,0);w.classList.remove("on")},180)}
+// ===== NAV + ปุ่มย้อนกลับของเบราว์เซอร์ (history) =====
+// ระดับ: 0 = หน้าแรก/ลงทะเบียนขั้น 1 · 1 = ลงทะเบียนขั้น 2 / แผนที่ · 2 = ด่าน บอส ผลด่าน สรุป
+const LV={sReg:0,sHome:0,sMap:1,sQuiz:2,sBossIntro:2,sBoss:2,sResult:2,sSummary:2},PLAY=["sQuiz","sBossIntro","sBoss","sResult"];
+const homeId=()=>S.student?"sHome":"sReg",posNow=()=>(history.state&&history.state.d)||0;
+let pendingNav=null,pendingTimer=0;
+function render(st){let id=st.s;
+ if(id==="sReg"&&S.student)id="sHome";if(id==="sHome"&&!S.student)id="sReg";
+ if(!S.student&&id!=="sReg")id="sReg";
+ if(id==="sReg")regStep(st.step||1);if(id==="sHome")renderHome();if(id==="sMap")renderMap();if(id==="sSummary")renderSummary();
+ show(id)}
+function go(id,step){step=step||1;const td=id==="sReg"&&step===2?1:LV[id],cd=posNow(),st={s:id,step,d:td};
+ try{if(td>cd){if(td-cd>1)history.pushState({s:"sMap",step:1,d:cd+1},"");history.pushState(st,"")}
+  else if(td===cd)history.replaceState(st,"");
+  else{pendingNav=st;clearTimeout(pendingTimer);pendingTimer=setTimeout(()=>{if(pendingNav){const p=pendingNav;pendingNav=null;p.d=posNow();history.replaceState(p,"");render(p)}},400);history.go(td-cd);return}}catch(e){}
+ render(st)}
+const inPlay=()=>(CUR==="sQuiz"||CUR==="sBoss")&&P&&!P.done;
+window.addEventListener("popstate",e=>{const st=e.state||{s:homeId(),step:1,d:0};
+ if(pendingNav){clearTimeout(pendingTimer);const p=pendingNav;pendingNav=null;p.d=st.d||0;history.replaceState(p,"");render(p);return}
+ if(inPlay()&&!confirm("ออกจากด่านนี้? ความคืบหน้าในด่านนี้จะไม่ถูกบันทึก")){history.pushState({s:CUR,step:1,d:(st.d||0)+1},"");return}
+ if(PLAY.includes(st.s)){const m={s:"sMap",step:1,d:st.d||0};history.replaceState(m,"");render(m);return}
+ render(st)});
 function bossArt(k,small){return BOSS_SVG.replace('<g id="PROPID"></g>',PROPS[k]).replace('class="boss-art"','class="boss-art'+(small?' small':'')+'"')}
 function setTaunt(el,t){el.style.opacity=0;setTimeout(()=>{el.innerHTML="💬 <strong>"+t+"</strong>";el.style.opacity=1},150)}
 const key=(k,st)=>k+"-"+st,starsOf=c=>c>=5?3:c>=4?2:c>=3?1:0;
@@ -266,25 +313,39 @@ const unlocked=(k,st)=>st===1||!!S.best[key(k,st-1)];
 const PH=/^0[689]\d{8}$/,clean=x=>x.replace(/[\s-]/g,"");
 document.querySelectorAll("#sReg input,#sReg select").forEach(i=>i.addEventListener("input",()=>$("regErr").textContent=""));
 const v=id=>$(id).value.trim();
+// ห้อง: แตะปุ่มเลขห้อง (ไม่ต้องพิมพ์ "/" ซึ่งไม่มีบนแป้นตัวเลขของมือถือ) หรือ "ห้องอื่น" แล้วพิมพ์เอง
+let ROOM="";
+function setRoom(r){ROOM=r;document.querySelectorAll("#roomChips .chip").forEach(c=>{const on=c.dataset.room===r;c.classList.toggle("on",on);c.setAttribute("aria-checked",on)});
+ $("roomOther").classList.toggle("hidden",r!=="other");$("roomChips").classList.remove("invalid");$("regErr").textContent="";
+ if(r==="other")setTimeout(()=>{$("froom").focus();$("froom").scrollIntoView({block:"center"})},50)}
+document.querySelectorAll("#roomChips .chip").forEach(c=>c.addEventListener("click",()=>setRoom(c.dataset.room)));
+function roomVal(){if(ROOM&&ROOM!=="other")return "1/"+ROOM;const s=v("froom").replace(/\s/g,"").replace(/^ม\.?/,"");let m=s.match(/^1[\/\-\.,\\](\d{1,2})$/)||s.match(/^(\d{1,2})$/);return m&&+m[1]>0?"1/"+(+m[1]):""}
+// แป้น Enter/ถัดไป ย้ายไปช่องถัดไป และเลื่อนช่องที่กำลังพิมพ์ให้อยู่กลางจอ ไม่ให้แป้นพิมพ์บัง
+document.querySelectorAll("#sReg input[type=text],#sReg input[type=tel]").forEach(i=>{
+ i.addEventListener("keydown",e=>{if(e.key!=="Enter")return;e.preventDefault();const box=i.closest("#regA,#regB"),all=[...box.querySelectorAll("input[type=text],input[type=tel],select")].filter(x=>x.offsetParent),k=all.indexOf(i);if(k>=0&&k<all.length-1)all[k+1].focus();else i.blur()});
+ i.addEventListener("focus",()=>setTimeout(()=>{try{i.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){}},300))});
 function stepA(){const e=[];
  if(!v("fname")||v("fname").split(/\s+/).length<2)e.push("กรอกชื่อและนามสกุลนักเรียน (เว้นวรรคระหว่างชื่อกับนามสกุล)");if(!v("fnick"))e.push("กรอกชื่อเล่น");
- if(!/^1\s*\/\s*\d{1,2}$/.test(v("froom")))e.push("ชั้น/ห้อง ให้กรอกรูปแบบ 1/ห้อง เช่น 1/2");if(!v("fschool"))e.push("กรอกโรงเรียน");
+ if(!roomVal())e.push(ROOM==="other"?"พิมพ์ห้องเป็นตัวเลข เช่น 1/9 หรือ 9":"แตะเลือกห้อง (ม.1/1, ม.1/2 …)");if(!v("fschool"))e.push("กรอกโรงเรียน");
  if(v("fphone")&&!PH.test(clean(v("fphone"))))e.push("เบอร์โทรนักเรียนไม่ถูกต้อง (มือถือ 10 หลัก ขึ้นต้น 06/08/09)");return e}
-function showErr(e){$("regErr").innerHTML=e.length?"• "+e.join("<br>• "):"";return !e.length}
+function showErr(e){$("regErr").innerHTML=e.length?"• "+e.join("<br>• "):"";if(e.length){if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();setTimeout(()=>$("regErr").scrollIntoView({block:"center",behavior:"smooth"}),50)}return !e.length}
 function regStep(n){$("regA").classList.toggle("hidden",n!==1);$("regB").classList.toggle("hidden",n!==2);$("stp1").classList.toggle("on",n===1);$("stp2").classList.toggle("on",n===2);$("regErr").textContent="";window.scrollTo(0,0)}
-$("nextBtn").onclick=()=>{if(showErr(stepA()))regStep(2)};
-$("backBtn").onclick=()=>regStep(1);
-$("startBtn").onclick=()=>{const e=stepA();if(e.length){regStep(1);showErr(e);return}
+const regNow=()=>$("regB").classList.contains("hidden")?1:2;
+$("nextBtn").onclick=()=>{if(showErr(stepA()))go("sReg",2)};
+const toStep1=()=>{if(regNow()===2)go("sReg",1)};
+$("backBtn").onclick=$("backTop").onclick=$("stp1").onclick=toStep1;
+$("stp2").onclick=()=>{if(regNow()===1&&showErr(stepA()))go("sReg",2)};
+$("startBtn").onclick=()=>{const e=stepA();if(e.length){go("sReg",1);setTimeout(()=>showErr(e),250);return}
  if(!v("fpname")||v("fpname").split(/\s+/).length<2)e.push("กรอกชื่อและนามสกุลผู้ปกครอง");if(!v("fprel"))e.push("เลือกความเกี่ยวข้องกับนักเรียน");
  if(v("fpphone")&&!PH.test(clean(v("fpphone"))))e.push("เบอร์โทรผู้ปกครองไม่ถูกต้อง (มือถือ 10 หลัก ขึ้นต้น 06/08/09)");
  if(/\d{13}/.test(clean(v("fline"))))e.push("ช่อง LINE ID ไม่ต้องกรอกเลขบัตรประชาชน");
  if(!$("fconsent").checked)e.push("ผู้ปกครองต้องติ๊กยินยอมตาม PDPA ก่อนเริ่มเล่น");
  if(!showErr(e))return;const now=Date.now();
  S={id:"M1-"+now.toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase(),
-  student:{name:v("fname"),nickname:v("fnick"),room:"ม."+v("froom").replace(/\s/g,""),school:v("fschool"),phone:clean(v("fphone")),
+  student:{name:v("fname"),nickname:v("fnick"),room:"ม."+roomVal(),school:v("fschool"),phone:clean(v("fphone")),
    parentName:v("fpname"),parentRelation:v("fprel"),parentPhone:clean(v("fpphone")),parentLine:v("fline"),consent:true,consentAt:new Date(now).toISOString(),consentVersion:"pdpa-v2-2569"},
   qset:"v2",startedAt:now,best:{},sent:false};
- persist();renderMap();go("sMap")};
+ persist();go("sMap")};
 if(CFG.SAVE_URL)$("pdpaLocal").innerHTML+=" และจะส่งให้โรงเรียนผ่านระบบบันทึกผลออนไลน์";
 
 // ===== MAP =====
@@ -298,8 +359,12 @@ function renderMap(){let done=0;$("mapWho").textContent="น้อง"+S.student
   return `<div class="zone"><div class="zt"><span>${s.icon} โซน ${zi+1} · ${s.name}</span><small>${pts}/20 คะแนน</small></div><div class="path">${road}<span class="deco" style="left:80%;top:8%">${DECO[k][0]}</span><span class="deco" style="left:6%;top:72%">${DECO[k][1]}</span>${nodes}</div></div>`}).join("");
  $("mapBar").style.width=done/20*100+"%";$("mapProg").textContent=done+"/20 ด่าน";
  document.querySelectorAll(".node").forEach(n=>n.onclick=()=>startStage(n.dataset.k,+n.dataset.st))}
-$("toSummary").onclick=()=>{renderSummary();go("sSummary")};
-$("logout").onclick=()=>{if(confirm("ล้างข้อมูลผู้เล่นและความคืบหน้าในเครื่องนี้?")){localStorage.removeItem(LS);location.reload()}};
+$("toSummary").onclick=()=>go("sSummary");
+$("mapHome").onclick=()=>go("sHome");
+function renderHome(){const st=S.student,done=Object.keys(S.best||{}).length,tot=ORDER.reduce((s,k)=>s+subj(k),0);$("homeHi").textContent="สวัสดี น้อง"+st.nickname+" 👋";
+ $("homeInfo").textContent=st.name+" · "+st.room+" · เล่นแล้ว "+done+"/20 ด่าน · "+tot+"/100 คะแนน"}
+$("homeMap").onclick=()=>go("sMap");$("homeSum").onclick=()=>go("sSummary");
+$("logout").onclick=$("homeLogout").onclick=()=>{if(confirm("ล้างข้อมูลผู้เล่นและความคืบหน้าในเครื่องนี้?")){localStorage.removeItem(LS);try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}location.reload()}};
 
 // ===== PLAY =====
 let P=null;
@@ -309,7 +374,7 @@ function startStage(k,st){if(!unlocked(k,st))return;
  if(P.boss){const B=BOSS[k];$("resBox").innerHTML="";$("bfArt").innerHTML="";$("biArt").innerHTML=bossArt(k);$("biName").textContent=B.name;$("biStory").innerHTML=B.story;$("biTaunt").innerHTML="💬 <strong>"+pick(B.taunt)+"</strong>";go("sBossIntro")}
  else{go("sQuiz");setTimeout(renderQ,200)}}
 $("biFight").onclick=()=>{$("biArt").innerHTML="";$("bfArt").innerHTML=bossArt(P.k,true);$("bfName").textContent="HP บอส · "+BOSS[P.k].name;setTaunt($("bfTaunt"),pick(BOSS[P.k].taunt));go("sBoss");setTimeout(renderQ,200)};
-$("biBack").onclick=()=>{renderMap();go("sMap")};
+$("biBack").onclick=$("biX").onclick=()=>go("sMap");
 const pre=()=>P.boss?"bf":"q";
 function renderQ(){const it=P.items[P.i],p=pre();P.locked=false;
  $(p+"Head").innerHTML=`${QB[P.k].icon} ${P.boss?"บอส":"ด่าน "+P.st} · ข้อ ${P.i+1}/5 <span class="tag">${it.level}</span>`;
@@ -324,14 +389,15 @@ function answer(j){if(P.locked)return;P.locked=true;const it=P.items[P.i],p=pre(
   setTaunt($("bfTaunt"),pick(ok?RIGHT:WRONG));$("bfBar").style.width=P.hp+"%";$("bfHp").textContent=P.hp+"%"}
  $(p+"Hearts").textContent="❤️".repeat(Math.max(0,P.hearts))+"🖤".repeat(CFG.HEARTS-Math.max(0,P.hearts));
  $(p+"Fb").innerHTML=ok?'<span class="ok">✔ ถูกต้อง!</span>':'<span class="bad">✘ ยังไม่ถูก — เฉลยดูได้ตอนจบด่าน</span>'+(P.hearts<=0?' <span class="bad">หัวใจหมดแล้ว!</span>':"");
- const last=P.i===4||P.hearts<=0;const nb=$(p+"Next");nb.textContent=last?"ดูผลด่าน ▶":"ข้อต่อไป ▶";nb.classList.remove("hidden")}
+ const last=P.i===4||P.hearts<=0;const nb=$(p+"Next");nb.textContent=last?"ดูผลด่าน ▶":"ข้อต่อไป ▶";nb.classList.remove("hidden");
+ setTimeout(()=>{const r=nb.getBoundingClientRect();if(r.bottom>innerHeight||r.top<0)try{nb.scrollIntoView({block:"nearest",behavior:"smooth"})}catch(e){}},60)}
 $("qNext").onclick=$("bfNext").onclick=()=>{if(P.i===4||P.hearts<=0)finish();else{P.i++;renderQ()}};
-$("qQuit").onclick=()=>{if(confirm("ออกจากด่านนี้? ความคืบหน้าในด่านนี้จะไม่ถูกบันทึก")){renderMap();go("sMap")}};
+$("qQuit").onclick=$("qX").onclick=$("bfQuit").onclick=$("bfX").onclick=()=>{if(P&&P.done||confirm("ออกจากด่านนี้? ความคืบหน้าในด่านนี้จะไม่ถูกบันทึก")){if(P)P.done=true;go("sMap")}};
 
 function finish(){const c=P.items.reduce((s,it,i)=>s+(P.ans[i]===it.answer?1:0),0),stars=starsOf(c),k=P.k,K=key(k,P.st),prev=S.best[K];
  const win=P.boss&&P.hp<=0&&P.hearts>0;
  if(!prev||c>prev.c)S.best[K]={c,stars,at:new Date().toISOString(),topics:P.items.map((it,i)=>({topic:it.topic,ok:P.ans[i]===it.answer}))};
- S.plays=(S.plays||0)+1;persist();
+ S.plays=(S.plays||0)+1;persist();P.done=true;
  const R=$("resBox"),s=QB[k];$("bfArt").innerHTML="";$("biArt").innerHTML="";
  R.innerHTML=`${P.boss?bossArt(k,true):`<div class="big">${stars===3?"🏆":stars>0?"🎉":"💪"}</div>`}
  <h2 style="text-align:center">${P.boss?(win?"ชนะบอสแล้ว! "+BOSS[k].name+" ยอมแพ้":"พ่ายบอสในรอบนี้"):`จบด่าน ${P.st} · ${esc(s.stages[P.st-1])}`}</h2>
@@ -343,7 +409,7 @@ function finish(){const c=P.items.reduce((s,it,i)=>s+(P.ans[i]===it.answer?1:0),
  <h2 style="margin-top:16px">📘 เฉลยและคำอธิบาย</h2>${P.items.map((it,i)=>`<div class="rev"><b>ข้อ ${i+1}</b> <span class="tag">${esc(it.topic)}</span> ${esc(it.q).replace(/\n/g,"<br>")}<br>
  ${P.ans[i]===it.answer?'<span class="ok">✔ ถูก</span>':`<span class="bad">✘ ${P.ans[i]===undefined?"ไม่ได้ตอบ":"ตอบ "+esc(it.choices[P.ans[i]])}</span>`} · เฉลย: <b>${esc(it.choices[it.answer])}</b><br><span class="muted">💡 ${esc(it.explain)}</span></div>`).join("")}`;
  go("sResult");const st=P.st;
- setTimeout(()=>{$("rMap").onclick=()=>{renderMap();go("sMap")};$("rAgain").onclick=()=>startStage(k,st);if($("rNext"))$("rNext").onclick=()=>startStage(k,st+1)},200);
+ setTimeout(()=>{$("rMap").onclick=()=>go("sMap");$("rAgain").onclick=()=>startStage(k,st);if($("rNext"))$("rNext").onclick=()=>startStage(k,st+1)},200);
  if(CFG.SAVE_URL&&CFG.SEND_EACH_STAGE)post({type:"stage",id:S.id,qset:"v2",registration:S.student,stage:{subject:s.name,stage:st,name:s.stages[st-1],correct:c,total:5,stars,boss:P.boss,win},submittedAt:new Date().toISOString()});
  if(allDone()&&!S.sent)sendFinal()}
 const subj=k=>[1,2,3,4].reduce((s,st)=>s+(S.best[key(k,st)]?.c||0),0);
@@ -354,7 +420,7 @@ function analysis(){const t={};ORDER.forEach(k=>[1,2,3,4].forEach(st=>(S.best[ke
  return Object.values(t).map(x=>({...x,p:x.c/x.n}))}
 function renderSummary(){const tot=ORDER.reduce((s,k)=>s+subj(k),0),done=Object.keys(S.best).length,tl=analysis();
  const strong=tl.filter(t=>t.p>=0.75&&t.n>=2),weak=tl.filter(t=>t.p<0.5);
- $("sumBox").innerHTML=`<h2>📊 สรุปคะแนนของน้อง${esc(S.student.nickname)}</h2><p class="muted" style="margin:0">${esc(S.student.name)} · ${esc(S.student.room)} · โรงเรียน${esc(S.student.school.replace(/^โรงเรียน/,""))}<br>ผู้ปกครอง: ${esc(S.student.parentName||"-")}${S.student.parentRelation?" ("+esc(S.student.parentRelation)+")":""}</p>
+ $("sumBox").innerHTML=`<div class="topnav"><button type="button" class="btn reset" id="sumBack">◀ แผนที่</button></div><h2>📊 สรุปคะแนนของน้อง${esc(S.student.nickname)}</h2><p class="muted" style="margin:0">${esc(S.student.name)} · ${esc(S.student.room)} · โรงเรียน${esc(S.student.school.replace(/^โรงเรียน/,""))}<br>ผู้ปกครอง: ${esc(S.student.parentName||"-")}${S.student.parentRelation?" ("+esc(S.student.parentRelation)+")":""}</p>
  <div class="score" style="margin-top:10px">${tot} / 100</div><p class="muted" style="text-align:center">เล่นครบ ${done}/20 ด่าน${done<20?" (ด่านที่ยังไม่เล่นนับ 0 คะแนน)":""}</p>
  <table><tr><th>วิชา</th><th>ด่าน 1–3 · บอส</th><th>คะแนน</th></tr>${ORDER.map(k=>`<tr><td>${QB[k].icon} ${QB[k].name}</td><td>${[1,2,3,4].map(st=>S.best[key(k,st)]?S.best[key(k,st)].c:"–").join(" · ")}</td><td><b>${subj(k)} / 20</b></td></tr>`).join("")}
  <tr><th>รวม</th><th></th><th>${tot} / 100</th></tr></table>
@@ -362,7 +428,7 @@ function renderSummary(){const tot=ORDER.reduce((s,k)=>s+subj(k),0),done=Object.
  ${tl.length?`<h2 style="margin-top:14px" class="ok">จุดแข็ง</h2><p class="muted">${strong.map(t=>QB[t.subj].name+": "+esc(t.topic)).join(" · ")||"ยังไม่มี"}</p><h2 class="bad">เรื่องที่ควรทบทวน</h2><p class="muted">${weak.map(t=>QB[t.subj].name+": "+esc(t.topic)).join(" · ")||"ไม่มี — เยี่ยมมาก!"}</p>`:""}
  <p id="saveStatus" class="muted" style="text-align:center">${!CFG.SAVE_URL?"✔ บันทึกคะแนนไว้ในเครื่องนี้แล้ว · แคปหน้าจอนี้ส่งให้คุณครูได้เลย":S.sent?"✔ ส่งผลรวมให้ครูแล้ว":done<20?"ผลรวมจะส่งให้ครูอัตโนมัติเมื่อเล่นครบ 20 ด่าน":""}</p>
  <div class="actions"><button class="btn go" id="sMapBtn">🗺️ กลับแผนที่</button>${CFG.SAVE_URL&&done===20?'<button class="btn reset" id="sSend">📤 ส่งผลอีกครั้ง</button>':""}</div>`;
- setTimeout(()=>{$("sMapBtn").onclick=()=>{renderMap();go("sMap")};if($("sSend"))$("sSend").onclick=()=>sendFinal(true)},0)}
+ setTimeout(()=>{$("sMapBtn").onclick=$("sumBack").onclick=()=>go("sMap");if($("sSend"))$("sSend").onclick=()=>sendFinal(true)},0)}
 function sendFinal(force){if(!CFG.SAVE_URL)return;const pts={},tl=analysis();let total=0;ORDER.forEach(k=>{pts[k]=subj(k);total+=pts[k]});
  const strong=tl.filter(t=>t.p>=0.75&&t.n>=2).map(t=>QB[t.subj].name+": "+t.topic).join(", "),weak=tl.filter(t=>t.p<0.5).map(t=>QB[t.subj].name+": "+t.topic).join(", ");
  post({type:"final",id:S.id,qset:"v2",registration:S.student,scores:{...pts,total,correct:total,questions:100,perSubject:20,plays:S.plays||0,minutes:Math.round((Date.now()-S.startedAt)/6000)/10,reward:total>=CFG.REWARD_THRESHOLD},
@@ -371,5 +437,7 @@ function post(p,cb){const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(
  fetch(CFG.SAVE_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(p),signal:ctl.signal}).then(()=>cb&&cb(true)).catch(()=>cb&&cb(false)).finally(()=>clearTimeout(to))}
 
 // ===== BOOT =====
-if(S.student){renderMap();SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!=="sMap"))}
+function boot(){try{history.replaceState({s:homeId(),step:1,d:0},"");if(S.student)history.pushState({s:"sMap",step:1,d:1},"")}catch(e){}
+ const id=S.student?"sMap":"sReg";CUR=id;if(id==="sMap")renderMap();SCREENS.forEach(s=>$(s).classList.toggle("hidden",s!==id))}
+boot();
 </script></body></html>
